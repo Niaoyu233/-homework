@@ -46,7 +46,7 @@ Personal
 
 #### 1~3：CBD
 
-#### 4：
+#### 4、
 
 ```html
 <!DOCTYPE html>
