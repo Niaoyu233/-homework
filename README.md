@@ -48,7 +48,7 @@ Personal
 
 #### 4：
 
-```HTML
+```html
 
 <!DOCTYPE html>
 <html lang="zh-CN">
