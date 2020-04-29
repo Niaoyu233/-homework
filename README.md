@@ -43,6 +43,18 @@ Personal
 
 - ### HTML5技术与应用
 
+**简单测试：**
+
+```html
+1、B
+2、
+none：默认。定义标准的文本
+underline：定义文本下的一条线。
+overline：定义文本上的一条线
+line-through：定义穿过文本下的一条线。
+blink：定义闪烁的文本。
+```
+
 #### 5.3：
 
 **1~3：CBD**
