@@ -89,9 +89,9 @@ IN AL,DX
 
 ```assembly
 L1:MOV DX,28AH
-    IN AL,DX
-    TEST AL,10H
-     JZ L1
+   IN AL,DX
+   TEST AL,10H
+   JZ L1
 ```
 
 **9:**
