@@ -64,7 +64,43 @@ ABBC、直觉、判定表、确认测试、一次性、对错
 ```
 ### 计算机接口课程设计
 
-暂无
+**7.1**
+
+```
+ABAAB
+```
+
+**6:**
+
+```assembly
+MOV DX,290H
+MOV AL,0
+OUT DX,AL
+```
+
+**7:**
+
+```assembly
+MOV DX,290H
+IN AL,DX
+```
+
+**8:**
+
+```assembly
+L1:MOV DX,28AH
+    IN AL,DX
+    TEST AL,10H
+     JZ L1
+```
+
+**9:**
+
+``3FH``
+
+**10:**
+
+``06H``
 
 ### HTML5技术与应用
 
