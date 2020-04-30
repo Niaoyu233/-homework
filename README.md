@@ -220,7 +220,7 @@ blink：定义闪烁的文本。
 
   <body>
     <div class="father">
-      <img src="/img.png" />
+      <img src="img.png" />
       <div class="child">定位</div>
     </div>
   </body>
