@@ -12,7 +12,7 @@
       
       
       
-      <script type="text/javascript" src="file:///c:\Users\Administrator\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.3\node_modules\@shd101wyy\mume\dependencies\raphael\raphael.js" charset="UTF-8"></script><script type="text/javascript" src="file:///c:\Users\Administrator\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.3\node_modules\@shd101wyy\mume\dependencies\flowchart\flowchart.min.js" charset="UTF-8"></script>
+      
       
 
       <style>
@@ -285,99 +285,8 @@ IN AL,DX
 <pre data-role="codeBlock" data-info class="language-"><code>3FH,06H
 </code></pre><h3 class="mume-header" id="%E4%BD%9C%E4%B8%9A">&#x4F5C;&#x4E1A;</h3>
 
-<h3 class="mume-header" id="1">1&#x3001;</h3>
+<img src="ljt.png">
 
-<p>&#x4F9D;&#x9898;&#x610F;&#x5F97;&#xFF1A;</p>
-<p>&#x8BA1;&#x6570;&#x521D;&#x503C;&#x662F; 10&#xFF0C;&#x5199;&#x63A7;&#x5236;&#x5B57;&#xFF0C;&#x901A;&#x9053; 0&#xFF0C;&#x65B9;&#x5F0F; 0</p>
-<p>&#x63A7;&#x5236;&#x5B57;&#xFF1A;</p>
-<p>00 10 00 1=11H</p>
-<table>
-<thead>
-<tr>
-<th>00</th>
-<th>10</th>
-<th>00</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&#x901A;&#x9053; 0</td>
-<td>&#x5199;&#x4F4E; 8 &#x4F4D;</td>
-<td>&#x65B9;&#x5F0F; 0</td>
-<td>BCD</td>
-</tr>
-</tbody>
-</table>
-<p>&#x8FDE;&#x63A5;&#x56FE;&#xFF1A;<br>
-<img src="ljt1.png"><br>
-&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</p>
-<div class="flow">start=&gt;start: &#x5F00;&#x59CB;
-op1=&gt;operation: AL&lt;-&#x63A7;&#x5236;&#x5B57;
-op2=&gt;operation: AL-&gt;&#x63A7;&#x5236;&#x53E3;
-op3=&gt;operation: &#x8BA1;&#x6570;&#x521D;&#x503C;-&gt;AL
-op4=&gt;operation: &#x901A;&#x9053;0&lt;-AL
-end=&gt;end: &#x7ED3;&#x675F;
-start-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;end
-</div><p>&#x7A0B;&#x5E8F;&#xFF1A;&#x8BBE; 8253 &#x7684;&#x7AEF;&#x53E3;&#x5730;&#x5740;&#x4E3A; 280H~283H</p>
-<pre data-role="codeBlock" data-info="assembly" class="language-assembly"><code>DATA SEGMENT
-DATA ENDS
-CODE SEGMENT
-ASSUME CS:CODE,DS:DATA
-START:
-MOV AX,DATA
-MOV DS,AX
-MOV AL,11H
-MOV DX,283H
-OUT DX,AL
-MOV AL,10
-MOV DX,280H
-OUT DX,AL
-MOV AH,4CH
-INT 21H
-CODE ENDS
-END START
-</code></pre><h3 class="mume-header" id="2">2&#x3001;</h3>
-
-<p>&#x4F9D;&#x9898;&#x610F;&#x5F97;&#xFF1A;</p>
-<p>&#x8BA1;&#x6570;&#x521D;&#x503C; 10&#xFF0C;&#x5199;&#x63A7;&#x5236;&#x5B57;&#xFF0C;&#x901A;&#x9053; 1&#xFF0C;&#x65B9;&#x5F0F; 2</p>
-<p>&#x63A7;&#x5236;&#x5B57;&#xFF1A;01 01 010 0=54H</p>
-<table>
-<thead>
-<tr>
-<th>01</th>
-<th>01</th>
-<th>010</th>
-<th>0</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&#x901A;&#x9053; 1</td>
-<td>&#x5199;&#x4F4E; 8 &#x4F4D;</td>
-<td>&#x65B9;&#x5F0F; 2</td>
-<td>&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;</td>
-</tr>
-</tbody>
-</table>
-<p>&#x8FDE;&#x63A5;&#x56FE;&#xFF1A;<br>
-<img src="ljt2.png"><br>
-&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</p>
-<div class="flow">start=&gt;start: &#x5F00;&#x59CB;
-op1=&gt;operation: &#x63A7;&#x5236;&#x5B57;-&gt;AL
-op2=&gt;operation: AL-&gt;&#x63A7;&#x5236;&#x53E3;
-op3=&gt;operation: &#x8BA1;&#x6570;&#x521D;&#x503C;-&gt;AL
-op4=&gt;operation: AL-&gt;&#x901A;&#x9053;1
-end=&gt;end: &#x7ED3;&#x675F;
-start-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;end
-</div><p>&#x7A0B;&#x5E8F;&#xFF1A;&#x8BBE; 8253 &#x7684;&#x7AEF;&#x53E3;&#x5730;&#x5740;&#x4E3A; 280H~283H</p>
-<pre data-role="codeBlock" data-info="assembly" class="language-assembly"><code>MOV AL,54H
-MOV DX,283H
-OUT DX,AL
-MOV AL,10
-MOV DX,281H
-OUT DX,AL
-</code></pre>
       </div>
       
       
@@ -386,20 +295,7 @@ OUT DX,AL
     
     
     
-    <script>
-var flowcharts = document.getElementsByClassName('flow')
-for (var i = 0; i < flowcharts.length; i++) {
-  var flow = flowcharts[i]
-  try {
-    var diagram = flowchart.parse(flow.textContent)
-    flow.id = 'flow_' + i
-    flow.innerHTML = ''
-    diagram.drawSVG(flow.id)
-  } catch (error) {
-    flow.innerHTML = '<pre class="language-text">' + error.toString() + '</pre>'
-  }
-}
-</script>
+    
     
     
   
