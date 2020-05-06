@@ -158,7 +158,7 @@ class Game {
         }
         for (let i = 0; i < 5; i++) {
             //这是横向的判断
-            const tmp1 = gameVec2Arr.slice(x.x + i + 1);
+            const tmp1 = gameVec2Arr.slice(x, x + i + 1);
             const tmp2 = gameVec2Arr.slice(x - (5 - i) + 1, x);
             const tmp = tmp2.concat(tmp1).map((t) => {
                 var v = t[y];
