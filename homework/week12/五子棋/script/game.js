@@ -93,14 +93,23 @@ class Game {
         let cx = self.hisAction[down - 1].value.x; //x坐标
         let cy = self.hisAction[down - 1].value.y; //y坐标
         let color;
-        color = down % 2 == 1 ? (color = '黑') : (color = '白');
+        let c = true;
+        let player;
+        let span = document.querySelector('span');
+        if (down % 2 == 1) {
+          c = false;
+        }
+        c == false ? (color = '黑') : (color = '白');
+        c == false ? (player = '白') : (player = '黑');
         let ul = document.querySelector('ul');
         let li;
         li = document.createElement('li');
         ul.insertBefore(li, ul.children[0]); //新发送的，永远在第一行
         li.innerHTML = '第' + down + '子,' + color + '子,坐标:' + cx + ',' + cy;
+        span.innerHTML = player + '方';
       }
     });
+    retry();
     this.update();
   }
   update() {
@@ -321,4 +330,10 @@ class Cursor {
       ctx.closePath();
     }
   }
+}
+function retry() {
+  let btn = document.querySelector('.btn');
+  btn.addEventListener('click', () => {
+    location = location;
+  });
 }

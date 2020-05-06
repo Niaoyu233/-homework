@@ -10,7 +10,8 @@
     <title>五子棋</title>
     <script src="script/game.js"></script>
     <style>
-      .box {
+      .record {
+        text-align: center;
         border: 1px solid black;
         float: left;
         width: 300px;
@@ -18,23 +19,31 @@
         margin-top: 13px;
       }
       ul {
-        margin-left: 23px;
         list-style: none;
         font-size: 20px;
         line-height: 30px;
+        margin-left: -38px;
       }
-      .box2 {
+      .canvasBox {
         float: left;
         width: 400px;
+      }
+      p {
+        font-size: 20px;
+      }
+      span {
+        color: red;
       }
     </style>
   </head>
 
   <body>
-    <div class="box2">
+    <div class="canvasBox">
       <canvas style="width: 100%; height: 100%;"></canvas>
     </div>
-    <div class="box">
+    <div class="record">
+      <p>轮到<span>__</span>出手</p>
+      <button class="btn">重新开始</button>
       <ul>
         显示操作记录
       </ul>
@@ -42,8 +51,7 @@
 
     <script>
       const g = new Game(document.querySelector('canvas'));
-
-      g.canvasOption.maxLine = 15;
+      g.canvasOption.maxLine = 14;
       g.init();
     </script>
   </body>
