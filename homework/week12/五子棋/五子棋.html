@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="script/game.js"></script>
+    <style>
+      .box {
+        border: 1px solid black;
+        float: left;
+        width: 300px;
+        height: auto;
+      }
+      ul {
+        margin-left: 23px;
+        list-style: none;
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .box2 {
+        float: left;
+        width: 400px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box2">
+      <canvas style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <div class="box">
+      <ul>
+        显示操作记录
+      </ul>
+    </div>
+
+    <script>
+      const g = new Game(document.querySelector('canvas'));
+
+      g.canvasOption.maxLine = 15;
+      g.init();
+    </script>
+  </body>
+</html>
