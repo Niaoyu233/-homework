@@ -25,15 +25,22 @@ class Game {
     this.hisAction = []; //用来存储已经完成过的操作，后面帮助完成悔棋操作
   }
   get basicUnit() {
-    const { size, maxLine } = this.canvasOption;
+    const {
+      size,
+      maxLine
+    } = this.canvasOption;
     return size / maxLine;
   }
   init() {
+
     //编写-个init函数，用来启动对游戏的各种操作
     const {
       canvas,
       gameVec2Arr,
-      canvasOption: { size, maxLine },
+      canvasOption: {
+        size,
+        maxLine
+      },
     } = this;
     canvas.width = size;
     canvas.height = size; //设置canvas的大小
@@ -89,44 +96,87 @@ class Game {
         self.switchPlayer = !self.switchPlayer;
         self.update(); //更新游戏状态
         //显示操作记录
-        let down = self.hisAction.length; //落子次数
-        let cx = self.hisAction[down - 1].value.x; //x坐标
-        let cy = self.hisAction[down - 1].value.y; //y坐标
-        let color;
-        let c = true;
-        let player;
-        let span = document.querySelector('span');
-        if (down % 2 == 1) {
-          c = false;
-        }
-        c == false ? (color = '黑') : (color = '白');
-        c == false ? (player = '白') : (player = '黑');
-        let ul = document.querySelector('ul');
-        let li;
+        let c
+        let c1
+        let down = this.hisAction.length; //落子次数
+        let cx = this.hisAction[down - 1].value.x; //x坐标
+        let cy = this.hisAction[down - 1].value.y; //y坐标
         li = document.createElement('li');
         ul.insertBefore(li, ul.children[0]); //新发送的，永远在第一行
-        li.innerHTML = '第' + down + '子,' + color + '子,坐标:' + cx + ',' + cy;
-        span.innerHTML = player + '方';
+
+        if (down % 2 == 1) {
+          c = '黑'
+          c1 = '白'
+        } else {
+          c = '白'
+          c1 = '黑'
+        }
+        span.innerHTML = c1 + '方';
+        li.innerHTML = '第' + down + '子,' + c + '子,坐标:' + cx + ',' + cy;
+
+
       }
     });
-    retry();
+
+    let span = document.querySelector('span');
+    let ul = document.querySelector('ul');
+    let li;
+    let c1 = '黑'
+    retry()
+    let re = document.querySelector('.returnUP');
+    re.addEventListener('click', () => {
+      this.switchPlayer = !this.switchPlayer;
+      const {
+        length
+      } = this.hisAction;
+      if (length > 0) {
+        const upAction = this.hisAction[length - 1];
+        if (upAction.type === 'CHEKCER_DOWN') {
+          const {
+            value: {
+              x,
+              y
+            },
+          } = upAction;
+          this.gameVec2Arr[x][y] = 0;
+          this.hisAction.pop();
+          let ul = document.querySelector('ul');
+          ul.removeChild(ul.children[0]);
+          if (this.hisAction.length % 2 == 1) {
+            c1 = '白'
+          } else {
+            c1 = '黑'
+          }
+          span.innerHTML = c1 + '方';
+          this.update();
+        }
+      }
+      return this.hisAction;
+    });
     this.update();
   }
+
   update() {
-    const { checkerBoard, corsor } = this;
+    const {
+      checkerBoard,
+      corsor
+    } = this;
     checkerBoard.draw();
     corsor.draw();
     if (this.isGameOver()) {
       alert(this.switchPlayer ? '黑方胜利' : '白方胜利');
       //刷新页面重新开始
       let res = confirm('重开一局？');
-      res == true ? (location = location) : res;
+      res == true ? location = location : res;
     }
   }
   isGameOver() {
     //编写判断游戏是否结束的函数
     const {
-      movePos: { x, y },
+      movePos: {
+        x,
+        y
+      },
       switchPlayer,
       gameVec2Arr,
     } = this;
@@ -138,17 +188,17 @@ class Game {
       const fork2 = tmp.slice(y - (5 - i) + 1, y);
       if (
         fork2
-          .concat(fork1)
-          .map((v) => {
-            if (v === target) {
-              return Math.abs(v);
-            } else if (v === 0) {
-              return 0;
-            } else {
-              return -Math.abs(v);
-            }
-          })
-          .join('') === '11111'
+        .concat(fork1)
+        .map((v) => {
+          if (v === target) {
+            return Math.abs(v);
+          } else if (v === 0) {
+            return 0;
+          } else {
+            return -Math.abs(v);
+          }
+        })
+        .join('') === '11111'
       ) {
         return true;
       }
@@ -213,6 +263,7 @@ class Game {
     }
     return false;
   }
+
 }
 class CheckerBoard {
   constructor(game, bgColor, lineColor) {
@@ -228,7 +279,10 @@ class CheckerBoard {
       gameTarget,
       gameTarget: {
         ctx,
-        canvasOption: { size, maxLine },
+        canvasOption: {
+          size,
+          maxLine
+        },
         gameVec2Arr,
       },
       bgColor,
@@ -259,7 +313,9 @@ class CheckerBoard {
     //-直到目前位置，我们绘制了一个空棋盘
     //每次重绘棋盘时候，会将棋子自动绘制
     const gameVec2ArrLne = gameVec2Arr.length;
-    const { checker } = this;
+    const {
+      checker
+    } = this;
     for (let i = 0; i < gameVec2ArrLne; i++) {
       //绘制已有的棋子
       const tmp = gameVec2Arr[i];
@@ -279,7 +335,9 @@ class Checker {
   }
   draw(posStatu, x, y) {
     //绘制棋子的函数
-    const { ctx } = this.gameTarget;
+    const {
+      ctx
+    } = this.gameTarget;
     const basicUnit = this.gameTarget.basicUnit;
     const halfUnit = basicUnit / 2;
     x++;
@@ -315,8 +373,15 @@ class Cursor {
   draw() {
     //绘制函数
     //依然是将相对坐标做成真正的坐标然后进行绘制
-    const { cursorStatu, gameVec2Arr, movePos, ctx } = this.gameTarget;
-    const { color } = this;
+    const {
+      cursorStatu,
+      gameVec2Arr,
+      movePos,
+      ctx
+    } = this.gameTarget;
+    const {
+      color
+    } = this;
     const basicUnit = this.gameTarget.basicUnit;
     const halfUnit = basicUnit / 2;
     if (cursorStatu && gameVec2Arr[movePos.x][movePos.y] === 0) {
@@ -331,6 +396,7 @@ class Cursor {
     }
   }
 }
+
 function retry() {
   let btn = document.querySelector('.btn');
   btn.addEventListener('click', () => {
