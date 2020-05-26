@@ -157,7 +157,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 :root {
     --bg-color: #141d28;
     --side-bar-bg-color: #090b10;
-    --control-text-color: #a9aaab;
+    --control-text-color: #c5c5c5;
     --primary-color: #efb752;
     --primary-btn-border-color: #f0b752;
     --active-file-text-color: inherit;
@@ -172,6 +172,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
     --control-text-color: var(--text-color);
     --control-text-hover-color: var(--text-color);
     --heading-char-color: #f0b752;
+    --text-color: rgb(255, 255, 255);
 }
 
 .dropdown-menu {
@@ -180,12 +181,17 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 }
 
 html {
-    background: #141b28;
+    background: #131b29;
     font-size: 0.925rem;
 }
 
+.megamenu-content,
+.megamenu-opened header {
+    background: #2f353a;
+}
+
 body {
-    background: #141b28;
+    background: #131b29;
     color: #a9aaab;
     /* font-family: "Nunito", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     font-family: Fira Code Retina;
@@ -196,7 +202,7 @@ body {
 
 #write {
     background: #131b29;
-    color: #a9aaab;
+    color: #cacaca;
     margin: 0 auto;
     max-width: 800px;
     padding: 30px;
@@ -254,7 +260,7 @@ h6 {
 #write h6::before {
     border-radius: 0;
     bottom: 0;
-    color: #131c29;
+    color: #efb752;
     float: none;
     font-size: 1rem;
     font-variant: 'small-caps';
@@ -272,7 +278,7 @@ h6 {
     margin: 0.6rem 0;
 }
 
-#write h1::before {
+#write h1:hover::before {
     bottom: 1.45rem;
     content: 'H1';
 }
@@ -282,7 +288,7 @@ h6 {
     margin: 0.7rem 0;
 }
 
-#write h2::before {
+#write h2:hover::before {
     bottom: 0.2rem;
     content: 'H2';
 }
@@ -292,7 +298,7 @@ h6 {
     margin: 0.5rem 0;
 }
 
-#write h3::before {
+#write h3:hover::before {
     bottom: 0.18rem;
     content: 'H3';
 }
@@ -302,7 +308,7 @@ h6 {
     margin: 0.2rem 0;
 }
 
-#write h4::before {
+#write h4:hover::before {
     content: 'H4';
     bottom: 0.15rem;
 }
@@ -318,11 +324,11 @@ h6 {
     bottom: 0.1rem;
 }
 
-#write h5::before {
+#write h5:hover::before {
     content: 'H5';
 }
 
-#write h6::before {
+#write h6:hover::before {
     content: 'H6';
 }
 
@@ -781,7 +787,7 @@ code {
 }
 
 #typora-sidebar .file-tree-node.file-library-file-node.active:hover .file-node-title {
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 #typora-sidebar .file-tree-node {
@@ -907,6 +913,11 @@ footer {
     border-bottom: 1px solid #090b10;
 }
 
+.megamenu-menu {
+    background-color: #1a283d;
+    box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
 .megamenu-menu-list li:not(.saved) a:not(.active):hover,
 .megamenu-menu-list li a.active {
     background: #101010 !important;
@@ -952,7 +963,7 @@ input {
 }
 
 .long-btn:hover {
-    background-color: #82bed6;
+    background-color: #1a283d;
 }
 
 .show-word-count #footer-word-count {
@@ -969,11 +980,11 @@ input {
 }
 
 .ty-preferences .window-content {
-    background-color: #fafafa;
+    background-color: #1a283d;
 }
 
 .ty-preferences .nav-group-item.active {
-    background: #999;
+    background: #090b10;
     color: white;
 }
 
@@ -1121,6 +1132,6 @@ input {
 </style>
 </head>
 <body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node'><h1><a name="第十五周作业" class="md-header-anchor"></a><span>第十五周作业</span></h1><h3><a name="a-hrefjavascripthistoryback-1返回目录a" class="md-header-anchor"></a><a href="javascript:history.back(-1)"><span>返回目录</span></a></h3><p><strong><span>周一日期：2020.05.25</span></strong></p><h3><a name="a-hrefhomeworkweek15英语html计算机英语a" class="md-header-anchor"></a><a href="homework/week15/英语.html"><span>计算机英语</span></a></h3><h3><a name="a-hrefhomeworkweek15webhtml-web-技术开发与应用a周一1300更新" class="md-header-anchor"></a><a href="homework/week15/web.html" ><span>Web 技术开发与应用</span></a><span>(周一13:00更新)</span></h3><h3><a name="a-hrefhomeworkweek15接口实验html-计算机接口课程设计a" class="md-header-anchor"></a><a href="homework/week15/接口实验.html" ><span>计算机接口课程设计</span></a></h3><h3><a name="a-hrefhomeworkweek15单片机实验html-单片机实验a" class="md-header-anchor"></a><a href="homework/week15/单片机实验.html" ><span>单片机实验</span></a></h3></div>
+<div  id='write'  class = 'is-node'><h1><a name="第十五周作业" class="md-header-anchor"></a><span>第十五周作业</span></h1><h3><a name="a-hrefjavascripthistoryback-1返回目录a" class="md-header-anchor"></a><a href="javascript:history.back(-1)"><span>返回目录</span></a></h3><p><strong><span>周一日期：2020.05.25</span></strong></p><h3><a name="a-hrefhomeworkweek15英语html计算机英语a" class="md-header-anchor"></a><a href="homework/week15/英语.html"><span>计算机英语</span></a></h3><h3><a name="a-hrefhomeworkweek15webhtml-web-技术开发与应用a周一1300更新" class="md-header-anchor"></a><a href="homework/week15/web.html" ><span>Web 技术开发与应用</span></a><span>(周一13:00更新)</span></h3><h3><a name="a-hrefhomeworkweek15接口实验html-计算机接口课程设计a" class="md-header-anchor"></a><a href="homework/week15/接口实验.html" ><span>计算机接口课程设计</span></a></h3><h3><a name="a-hrefhomeworkweek15html5html-html5技术与应用a周二1200更新" class="md-header-anchor"></a><a href="homework/week15/html5.html" ><span>HTML5技术与应用</span></a><span>(周二12:00更新)</span></h3><h3><a name="a-hrefhomeworkweek15单片机实验html-单片机实验a" class="md-header-anchor"></a><a href="homework/week15/单片机实验.html" ><span>单片机实验</span></a></h3></div>
 </body>
 </html>
